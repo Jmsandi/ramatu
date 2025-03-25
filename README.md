@@ -82,6 +82,7 @@ Potential future enhancements could include:
 
 - The website uses [Font Awesome](https://fontawesome.com/) for icons
 - Tailwind CSS for the responsive design framework
+- @Jm_Sandi
 
 ## Contact
 
