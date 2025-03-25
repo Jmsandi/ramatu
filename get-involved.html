@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved - Ramatu Foundation for Girls' and Women's Empowerment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="py-6 sticky top-0 z-50 bg-transparent">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/logo.png" alt="Ramatu Foundation Logo" class="h-12 mr-3">
+                        <span class="text-xl font-bold text-primary-green">Ramatu Foundation</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="font-medium text-gray-600 hover:text-primary-green">Home</a>
+                    <a href="about.html" class="font-medium text-gray-600 hover:text-primary-green">About Us</a>
+                    <a href="programs.html" class="font-medium text-gray-600 hover:text-primary-green">Programs</a>
+                    <a href="impact.html" class="font-medium text-gray-600 hover:text-primary-green">Our Impact</a>
+                    <a href="get-involved.html" class="font-medium text-primary-green">Get Involved</a>
+                    <a href="contact.html" class="font-medium text-gray-600 hover:text-primary-green">Contact</a>
+                </div>
+                <div>
+                    <a href="get-involved.html" class="bg-coral text-white px-5 py-2.5 rounded-full font-semibold hover:opacity-90">
+                        Donate <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="outline-none text-primary-green">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="bg-cream px-4 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">About Us</a>
+                <a href="programs.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Programs</a>
+                <a href="impact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Our Impact</a>
+                <a href="get-involved.html" class="block px-3 py-2 rounded-md font-medium text-primary-green">Get Involved</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Contact</a>
+                <a href="get-involved.html" class="block px-3 py-2 mt-2 bg-coral text-white rounded-full font-medium text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-primary-green text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-2">Get Involved</h1>
+            <p class="text-lg">Together, we can create a brighter future for girls and women in Sierra Leone</p>
+        </div>
+    </header>
+
+    <!-- Ways to Get Involved -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary-green mb-8 text-center">How You Can Help</h2>
+                <p class="text-gray-700 text-lg mb-12 text-center">
+                    There are many ways to support our mission of empowering girls and women in Sierra Leone. Whether through donations, volunteering, partnerships, or raising awareness, your contribution makes a real difference.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Donate</h3>
+                        <p class="text-gray-700 mb-6">
+                            Your financial support enables us to provide educational materials, conduct awareness campaigns, support girls in school, and implement our various programs. Every contribution, no matter the size, helps create lasting change.
+                        </p>
+                        <a href="#donation-options" class="bg-coral text-white px-6 py-3 rounded-full inline-block hover:opacity-90">Donate Now</a>
+                    </div>
+                    
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Volunteer</h3>
+                        <p class="text-gray-700 mb-6">
+                            Share your skills and time to support our mission. Whether you're in Sierra Leone or internationally, there are many ways to volunteer, from mentorship to event planning, administrative support, and more.
+                        </p>
+                        <a href="#volunteer-options" class="bg-coral text-white px-6 py-3 rounded-full inline-block hover:opacity-90">Learn More</a>
+                    </div>
+                    
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Partner With Us</h3>
+                        <p class="text-gray-700 mb-6">
+                            Organizations and businesses can partner with us to amplify our impact. We welcome collaborations on projects, sponsorships, and initiatives that align with our mission of empowering girls and women.
+                        </p>
+                        <a href="#partnership-options" class="bg-coral text-white px-6 py-3 rounded-full inline-block hover:opacity-90">Explore Partnerships</a>
+                    </div>
+                    
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Raise Awareness</h3>
+                        <p class="text-gray-700 mb-6">
+                            Help spread the word about our work and the issues facing girls and women in Sierra Leone. Follow us on social media, share our content, and be an advocate for gender equality and girls' rights.
+                        </p>
+                        <a href="https://fb.me/ramatufoundationSL" target="_blank" class="bg-coral text-white px-6 py-3 rounded-full inline-block hover:opacity-90">Connect With Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section id="donation-options" class="py-16" style="background-color: var(--bg-cream);">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary-green mb-8 text-center">Donation Options</h2>
+                <p class="text-gray-700 text-lg mb-12 text-center">
+                    Your generous donations help us continue our vital work in supporting girls and women in Sierra Leone. Choose the option that works best for you.
+                </p>
+                
+                <div class="bg-white shadow-md rounded-3xl p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-primary-green mb-6">Current Methods of Donation</h3>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold text-coral mb-4">Bank Transfer (UK & International)</h4>
+                        <p class="text-gray-700 mb-4">
+                            For UK and international donations, please use the following bank details:
+                        </p>
+                        <div class="bg-cream p-6 rounded-xl mb-4">
+                            <p class="text-gray-700"><strong>Account Name:</strong> Ramatu Foundation for Girls and Women Empowerment</p>
+                            <p class="text-gray-700"><strong>Bank:</strong> Lloyds Bank</p>
+                            <p class="text-gray-700"><strong>Account Number:</strong> 87650860</p>
+                            <p class="text-gray-700"><strong>Sort Code:</strong> 30-98-97</p>
+                        </div>
+                        <p class="text-gray-700">
+                            Please include your name as a reference so we can acknowledge your donation.
+                        </p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold text-coral mb-4">Bank Transfer (Sierra Leone)</h4>
+                        <p class="text-gray-700 mb-4">
+                            For local donations within Sierra Leone, please use the following bank details:
+                        </p>
+                        <div class="bg-cream p-6 rounded-xl mb-4">
+                            <p class="text-gray-700"><strong>Account Name:</strong> Ramatu Foundation for Girls and Women Empowerment</p>
+                            <p class="text-gray-700"><strong>Bank:</strong> Ecobank Sierra Leone</p>
+                            <p class="text-gray-700"><strong>Account Number:</strong> Please contact us for this information</p>
+                        </div>
+                        <p class="text-gray-700">
+                            For security reasons, please contact us directly for the account number at <a href="mailto:sramatukarim@gmail.com" class="text-primary-green hover:underline">sramatukarim@gmail.com</a> or call +23299766252.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-bold text-coral mb-4">Mobile Money Transfer (Sierra Leone)</h4>
+                        <p class="text-gray-700 mb-4">
+                            For donations via mobile money within Sierra Leone:
+                        </p>
+                        <div class="bg-cream p-6 rounded-xl mb-4">
+                            <p class="text-gray-700"><strong>Afrimoney/Orange Money:</strong> +23299766252</p>
+                            <p class="text-gray-700"><strong>Recipient Name:</strong> Ramatu Foundation for Girls and Women Empowerment</p>
+                        </div>
+                        <p class="text-gray-700">
+                            Please send a confirmation message to the same number after making your transfer.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white shadow-md rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-primary-green mb-6">What Your Donation Can Provide</h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-coral text-2xl font-bold mb-2">£10 / Le250,000</div>
+                            <p class="text-gray-700">School supplies for one girl for a term</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-coral text-2xl font-bold mb-2">£25 / Le600,000</div>
+                            <p class="text-gray-700">School fees for one girl for a term</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-coral text-2xl font-bold mb-2">£50 / Le1,200,000</div>
+                            <p class="text-gray-700">Community awareness campaign in one village</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-coral text-2xl font-bold mb-2">£100 / Le2,400,000</div>
+                            <p class="text-gray-700">Support for five girls' education for a term</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-coral text-2xl font-bold mb-2">£250 / Le6,000,000</div>
+                            <p class="text-gray-700">Skills training for ten women</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-coral text-2xl font-bold mb-2">£500+ / Le12,000,000+</div>
+                            <p class="text-gray-700">Major project support or emergency response</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Options -->
+    <section id="volunteer-options" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary-green mb-8 text-center">Volunteer Opportunities</h2>
+                <p class="text-gray-700 text-lg mb-12 text-center">
+                    We welcome volunteers who share our vision and want to contribute their time, skills, and energy to our cause. There are many ways to get involved, both in Sierra Leone and internationally.
+                </p>
+                
+                <div class="space-y-8">
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Roles for Local Volunteers (Sierra Leone)</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Community Outreach</h4>
+                                <p class="text-gray-700">Help us engage with communities, conduct awareness sessions, and organize events.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Mentorship</h4>
+                                <p class="text-gray-700">Serve as a mentor to girls in our educational support program, providing guidance and inspiration.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Program Support</h4>
+                                <p class="text-gray-700">Assist with the implementation of our various programs, from educational support to rights awareness.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Administration</h4>
+                                <p class="text-gray-700">Help with office administration, record-keeping, and logistics to keep our operations running smoothly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Roles for International Volunteers</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Virtual Mentorship</h4>
+                                <p class="text-gray-700">Connect with girls in Sierra Leone through our virtual mentorship program, sharing knowledge and experiences.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Fundraising</h4>
+                                <p class="text-gray-700">Organize fundraising events or campaigns in your community to support our work.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Skills-Based Volunteering</h4>
+                                <p class="text-gray-700">Contribute your professional skills in areas such as marketing, website development, grant writing, and more.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Advocacy</h4>
+                                <p class="text-gray-700">Raise awareness about girls' rights and gender equality issues in Sierra Leone in your community and networks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">How to Apply</h3>
+                        <p class="text-gray-700 mb-6">
+                            If you're interested in volunteering with the Ramatu Foundation, please send an email to <a href="mailto:sramatukarim@gmail.com" class="text-primary-green hover:underline">sramatukarim@gmail.com</a> with the following information:
+                        </p>
+                        <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-6">
+                            <li>Your name and contact information</li>
+                            <li>Your location (country/city)</li>
+                            <li>The type of volunteer role you're interested in</li>
+                            <li>Your relevant skills and experience</li>
+                            <li>Your availability (hours per week and duration)</li>
+                            <li>A brief statement about why you want to volunteer with the Ramatu Foundation</li>
+                        </ul>
+                        <p class="text-gray-700">
+                            We'll get back to you within a week to discuss potential volunteer opportunities and next steps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Options -->
+    <section id="partnership-options" class="py-16" style="background-color: var(--bg-cream);">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary-green mb-8 text-center">Partner With Us</h2>
+                <p class="text-gray-700 text-lg mb-12 text-center">
+                    Partnerships are essential to expanding our impact and creating sustainable change. We welcome collaborations with organizations, businesses, schools, and institutions that share our vision.
+                </p>
+                
+                <div class="space-y-8">
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Types of Partnerships</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Program Partnerships</h4>
+                                <p class="text-gray-700">
+                                    Collaborate with us on implementing specific programs or projects that align with our mission, such as educational initiatives, skills training, or awareness campaigns.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Corporate Sponsorships</h4>
+                                <p class="text-gray-700">
+                                    Businesses can sponsor specific programs, events, or initiatives, providing financial support while demonstrating corporate social responsibility.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Technical Support</h4>
+                                <p class="text-gray-700">
+                                    Organizations with specific expertise can provide technical support in areas such as healthcare, education, legal services, or technology to enhance our programs.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">School/University Partnerships</h4>
+                                <p class="text-gray-700">
+                                    Educational institutions can partner with us through exchange programs, research collaboration, or service-learning opportunities for students.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Benefits of Partnership</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Social Impact</h4>
+                                <p class="text-gray-700">Contribute to meaningful change in the lives of girls and women in Sierra Leone.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Visibility</h4>
+                                <p class="text-gray-700">Recognition on our website, social media, and relevant promotional materials.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Community Engagement</h4>
+                                <p class="text-gray-700">Opportunities to engage with local communities in Sierra Leone.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-bold text-coral mb-2">Network Building</h4>
+                                <p class="text-gray-700">Connect with other organizations and stakeholders working on gender equality and development.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white shadow-md rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Contact Us for Partnership</h3>
+                        <p class="text-gray-700 mb-6">
+                            If your organization is interested in partnering with the Ramatu Foundation, please email us at <a href="mailto:sramatukarim@gmail.com" class="text-primary-green hover:underline">sramatukarim@gmail.com</a> with:
+                        </p>
+                        <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                            <li>Your organization's name and brief background</li>
+                            <li>Contact person's information</li>
+                            <li>Type of partnership you're interested in</li>
+                            <li>Potential areas of collaboration</li>
+                            <li>Proposed timeframe for partnership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-coral text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Make a Difference?</h2>
+            <p class="text-lg mb-8 max-w-3xl mx-auto">
+                Whether through a donation, volunteering, or partnership, your support helps us create a better future for girls and women in Sierra Leone. Join us today!
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#donation-options" class="bg-white text-coral hover:bg-gray-100 py-3 px-8 rounded-full font-medium">Donate Now</a>
+                <a href="contact.html" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-coral py-3 px-8 rounded-full font-medium">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white footer-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Vision</h3>
+                    <p class="text-gray-600">To see a safe Sierra Leone wherein all the girls and women are aware of their rights and responsibilities and are able to make their dreams come to reality.</p>
+                    <div class="mt-4">
+                        <p class="text-gray-600">Established 2019 in Sierra Leone</p>
+                        <p class="text-gray-600 font-semibold mt-2">"Making it happen for sustainable change"</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Mission</h3>
+                    <p class="text-gray-600">To be an effective agent in the liberation of the oppressed and marginalized girls and women from all forms of violence that stop them from achieving their economic, social, emotional and physical potential.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-primary-green">Home</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-primary-green">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-600 hover:text-primary-green">Programs</a></li>
+                        <li><a href="impact.html" class="text-gray-600 hover:text-primary-green">Our Impact</a></li>
+                        <li><a href="get-involved.html" class="text-gray-600 hover:text-primary-green">Get Involved</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-primary-green">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Contact Us</h3>
+                    <p class="text-gray-600">1 Fenty Drive New York Makeni</p>
+                    <p class="text-gray-600">Sierra Leone</p>
+                    <p class="text-gray-600">+23299766252/073764339</p>
+                    <p class="text-gray-600">sramatukarim@gmail.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://fb.me/ramatufoundationSL" class="text-gray-600 hover:text-primary-green text-2xl" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-10 pt-6 text-center text-gray-600">
+                <p>&copy; 2025 Ramatu Foundation for Girls' and Women's Empowerment. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

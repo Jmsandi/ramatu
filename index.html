@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramatu Foundation for Girls' and Women's Empowerment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #0a7a6b;
+            --coral: #e87d67;
+            --bg-cream: #f9f5eb;
+        }
+        body {
+            background-color: var(--bg-cream);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .bg-primary-green {
+            background-color: var(--primary-green);
+        }
+        .text-primary-green {
+            color: var(--primary-green);
+        }
+        .bg-coral {
+            background-color: var(--coral);
+        }
+        .text-coral {
+            color: var(--coral);
+        }
+        .btn-coral {
+            background-color: var(--coral);
+            color: white;
+            border-radius: 30px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-coral:hover {
+            opacity: 0.9;
+        }
+        .rounded-card {
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 8px;
+            background-color: #e1e1e1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: var(--coral);
+        }
+        .stat-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-green);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="py-6 sticky top-0 z-50 bg-transparent">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/logo.png" alt="Ramatu Foundation Logo" class="h-12 mr-3">
+                        <span class="text-xl font-bold text-primary-green">Ramatu Foundation</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-purple-200 font-medium">Home</a>
+                    <a href="about.html" class="hover:text-purple-200 font-medium">About Us</a>
+                    <a href="programs.html" class="hover:text-purple-200 font-medium">Programs</a>
+                    <a href="impact.html" class="hover:text-purple-200 font-medium underline">Our Impact</a>
+                    <a href="get-involved.html" class="hover:text-purple-200 font-medium">Get Involved</a>
+                    <a href="contact.html" class="hover:text-purple-200 font-medium">Contact</a>
+                </div>
+                <div>
+                    <a href="get-involved.html" class="bg-coral text-white px-5 py-2.5 rounded-full font-semibold hover:opacity-90">
+                        Donate <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="outline-none text-primary-green">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="bg-cream px-4 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md font-medium text-primary-green">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">About Us</a>
+                <a href="programs.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Services</a>
+                <a href="impact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Teams</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Contact Us</a>
+                <a href="get-involved.html" class="block px-3 py-2 mt-2 bg-coral text-white rounded-full font-medium text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-10 md:py-16 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-start">
+                <!-- Left Content -->
+                <div class="w-full md:w-5/12 mb-10 md:mb-0">
+                    <h5 class="text-gray-600 mb-3">Making it happen for sustainable change</h5>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                        Being Part Of<br>
+                        Ramatu Foundation<br>
+                        Is A Way To Share
+                    </h1>
+                    <p class="text-gray-600 mb-8">
+                        The Ramatu Foundation for Girls and Women's Empowerment is a registered women's rights community-based organization in Makeni, Sierra Leone. Founded on October 26, 2019, we are committed to creating sustainable change for girls and women.
+                    </p>
+                    
+                    <!-- Stats Section -->
+                    <div class="bg-primary-green rounded-3xl p-6 text-white grid grid-cols-3 gap-6 mt-10">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">6000+</div>
+                            <div class="text-sm mt-1">Girls & Women Engaged</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">4+</div>
+                            <div class="text-sm mt-1">Communities Served</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">40+</div>
+                            <div class="text-sm mt-1">Girls Supported in Education</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Content - Donation Cards -->
+                <div class="w-full md:w-7/12 md:pl-10 relative">
+                    <div class="bg-primary-green rounded-3xl p-4 absolute top-0 right-0 w-full md:w-5/6 h-64 -z-10"></div>
+                    
+                    <!-- Main Donation Card -->
+                    <div class="bg-white rounded-3xl shadow-lg p-6 overflow-hidden mb-8 relative z-10">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="w-full md:w-1/2 md:pr-4">
+                                <div class="text-coral text-2xl font-bold">$20<span class="text-sm font-normal">/mon</span></div>
+                                <p class="text-xs text-gray-500 mt-1">Or Make One Time Donation</p>
+                                
+                                <h3 class="text-2xl font-bold text-gray-800 mt-4">Support Girls' Education</h3>
+                                <p class="text-gray-600 text-sm mt-3">
+                                    Provide financial and material support for girls to achieve high levels of education in Sierra Leone.
+                                </p>
+                                
+                                <a href="get-involved.html" class="btn-coral w-full mt-8 block text-center py-3">Donate Now</a>
+                            </div>
+                            <div class="w-full md:w-1/2 mt-4 md:mt-0">
+                                <div class="rounded-3xl overflow-hidden h-48">
+                                    <img src="assets/pic3.png" alt="Children in need" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Small Donation Card -->
+                    <div class="bg-white rounded-3xl shadow-lg p-4 w-48 absolute top-48 right-10 z-20">
+                        <div class="text-coral text-lg font-bold">$20<span class="text-xs font-normal">/mon</span></div>
+                        <h4 class="text-sm font-semibold mt-1">End Gender-Based Violence</h4>
+                        <div class="text-xs text-gray-500 mt-1">Campaign against FGM, forced marriage, and more</div>
+                        <a href="get-involved.html" class="btn-coral w-full mt-2 text-sm py-2 block text-center">Donate Now</a>
+                    </div>
+                    
+                    <!-- Circle Icon -->
+                    <div class="stat-circle absolute right-0 bottom-10 z-20 flex items-center justify-center">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Core Values Section -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <h3 class="text-2xl font-bold text-center text-primary-green mb-6">Our Core Values</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-primary-green rounded-full flex items-center justify-center text-white mx-auto mb-3">
+                            <i class="fas fa-heart text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-800 mb-2">Empathy & Love</h4>
+                        <p class="text-sm text-gray-600">Giving love, hope and empathy to vulnerable girls and women in deprived communities</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-primary-green rounded-full flex items-center justify-center text-white mx-auto mb-3">
+                            <i class="fas fa-balance-scale text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-800 mb-2">Gender Equity</h4>
+                        <p class="text-sm text-gray-600">Promoting gender mainstreaming, equity and inclusion in every facet of life</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-primary-green rounded-full flex items-center justify-center text-white mx-auto mb-3">
+                            <i class="fas fa-bullhorn text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-800 mb-2">Awareness</h4>
+                        <p class="text-sm text-gray-600">Creating awareness about human rights and injustices affecting girls and women</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-primary-green rounded-full flex items-center justify-center text-white mx-auto mb-3">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-800 mb-2">Accountability</h4>
+                        <p class="text-sm text-gray-600">Maintaining transparency and accountability to all our stakeholders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Donation Card Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-8">
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2 p-8">
+                        <div class="text-coral text-3xl font-bold">$20<span class="text-base font-normal">/MON</span></div>
+                        <p class="text-xs text-gray-500 mt-1">Or Make One Time Donation</p>
+                        
+                        <h3 class="text-3xl font-bold text-gray-800 mt-6">Support Girls and Women in Sierra Leone</h3>
+                        <p class="text-gray-600 mt-4">
+                            We work tirelessly in 4 communities in Makeni: Pate Bana Marank, Makneh village, Ropolon, and New York community, 
+                            providing educational support, combating gender-based violence, and creating sustainable change.
+                        </p>
+                        
+                        <a href="get-involved.html" class="btn-coral w-full md:w-60 mt-6 block text-center py-3">Donate Now</a>
+                    </div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div class="h-full">
+                            <img src="assets/pic1.png" alt="Children in Sierra Leone" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Circle Icon -->
+                        <div class="stat-circle absolute right-6 bottom-6 flex items-center justify-center">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="py-12" style="background-color: var(--bg-cream);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary-green mb-10">What We Do</h2>
+            
+            <p class="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+                Since 2019, we've been working in Bombali district and visited schools in Port Loko district, directly working with 4 communities in Makeni to create sustainable change.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-md rounded-3xl p-6">
+                    <div class="w-14 h-14 bg-primary-green rounded-full flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-book-reader text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-green mb-3">Education & Rights</h3>
+                    <p class="text-gray-700">
+                        Educating women & girls about their rights & responsibilities and educating men and boys to be Allies for Gender Equality.
+                        Providing financial and material support for 40+ girls to achieve high levels of education.
+                    </p>
+                </div>
+                
+                <div class="bg-white shadow-md rounded-3xl p-6">
+                    <div class="w-14 h-14 bg-primary-green rounded-full flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-hands-helping text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-green mb-3">Anti-Violence Campaigns</h3>
+                    <p class="text-gray-700">
+                        Campaigning against gender-based violence including forced marriage, Female Genital Mutilation (FGM), rape, sexual harassment, teenage pregnancy and early marriage.
+                    </p>
+                </div>
+                
+                <div class="bg-white shadow-md rounded-3xl p-6">
+                    <div class="w-14 h-14 bg-primary-green rounded-full flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-heartbeat text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-green mb-3">Health & Wellbeing</h3>
+                    <p class="text-gray-700">
+                        Promoting Sexual Reproductive Health & Rights - providing sex education and contraception. Responding to health emergencies like COVID-19, Typhoid & Malaria with awareness and resources.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+                <div class="bg-white shadow-md rounded-3xl p-6">
+                    <div class="w-14 h-14 bg-primary-green rounded-full flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-green mb-3">Community Engagement</h3>
+                    <p class="text-gray-700">
+                        Educating local communities through community days, broadcast and social media, and school visits (school tours). Organizing motivational/mentorship programs for girls and women in the communities we work with.
+                    </p>
+                </div>
+                
+                <div class="bg-white shadow-md rounded-3xl p-6">
+                    <div class="w-14 h-14 bg-primary-green rounded-full flex items-center justify-center text-white mb-4">
+                        <i class="fas fa-globe-africa text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-green mb-3">Girls Linking Program</h3>
+                    <p class="text-gray-700">
+                        Linking girls in the Foundation with those in UK schools to share cultures and inspire each other. We work with women in the UK through Zoom meetings to share stories and inspire our teams.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How To Start Help Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="bg-coral rounded-3xl p-8 text-white text-center">
+                <h2 class="text-3xl font-bold mb-6">How To Start Help</h2>
+                <p class="max-w-2xl mx-auto">
+                    There are many ways you can support our mission to empower girls and women in Sierra Leone. Your contribution makes a meaningful difference.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6">
+                        <div class="w-16 h-16 bg-white text-coral rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hand-holding-heart text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Volunteer With Us</h3>
+                        <p class="text-sm">Join our dedicated team of volunteers and make a direct impact in the lives of girls and women in Sierra Leone.</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6">
+                        <div class="w-16 h-16 bg-white text-coral rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-donate text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Fundraise For Us</h3>
+                        <p class="text-sm">Raise funds through events like bake sales, dinners, or runs. Get in touch for materials and support to run your fundraiser.</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-xl p-6">
+                        <div class="w-16 h-16 bg-white text-coral rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bullhorn text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Spread The Word</h3>
+                        <p class="text-sm">Following and sharing us on social media helps us find new volunteers and donors. Give presentations about our work at your school or workplace.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white footer-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Vision</h3>
+                    <p class="text-gray-600">To see a safe Sierra Leone wherein all the girls and women are aware of their rights and responsibilities and are able to make their dreams come to reality.</p>
+                    <div class="mt-4">
+                        <p class="text-gray-600">Established 2019 in Sierra Leone</p>
+                        <p class="text-gray-600 font-semibold mt-2">"Making it happen for sustainable change"</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Mission</h3>
+                    <p class="text-gray-600">To be an effective agent in the liberation of the oppressed and marginalized girls and women from all forms of violence that stop them from achieving their economic, social, emotional and physical potential.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-primary-green">Home</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-primary-green">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-600 hover:text-primary-green">Programs</a></li>
+                        <li><a href="impact.html" class="text-gray-600 hover:text-primary-green">Our Impact</a></li>
+                        <li><a href="get-involved.html" class="text-gray-600 hover:text-primary-green">Get Involved</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-primary-green">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Contact Us</h3>
+                    <p class="text-gray-600">1 Fenty Drive New York Makeni</p>
+                    <p class="text-gray-600">Sierra Leone</p>
+                    <p class="text-gray-600">+23299766252/073764339</p>
+                    <p class="text-gray-600">sramatukarim@gmail.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://fb.me/ramatufoundationSL" class="text-gray-600 hover:text-primary-green text-2xl" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-10 pt-6 text-center text-gray-600">
+                <p>&copy; 2025 Ramatu Foundation for Girls' and Women's Empowerment. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

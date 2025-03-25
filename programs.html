@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Ramatu Foundation for Girls' and Women's Empowerment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="py-6 sticky top-0 z-50 bg-transparent">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/logo.png" alt="Ramatu Foundation Logo" class="h-12 mr-3">
+                        <span class="text-xl font-bold text-primary-green">Ramatu Foundation</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="font-medium text-gray-600 hover:text-primary-green">Home</a>
+                    <a href="about.html" class="font-medium text-gray-600 hover:text-primary-green">About Us</a>
+                    <a href="programs.html" class="font-medium text-primary-green">Programs</a>
+                    <a href="impact.html" class="font-medium text-gray-600 hover:text-primary-green">Our Impact</a>
+                    <a href="get-involved.html" class="font-medium text-gray-600 hover:text-primary-green">Get Involved</a>
+                    <a href="contact.html" class="font-medium text-gray-600 hover:text-primary-green">Contact</a>
+                </div>
+                <div>
+                    <a href="get-involved.html" class="bg-coral text-white px-5 py-2.5 rounded-full font-semibold hover:opacity-90">
+                        Donate <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="outline-none text-primary-green">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="bg-cream px-4 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">About Us</a>
+                <a href="programs.html" class="block px-3 py-2 rounded-md font-medium text-primary-green">Programs</a>
+                <a href="impact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Our Impact</a>
+                <a href="get-involved.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Get Involved</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Contact</a>
+                <a href="get-involved.html" class="block px-3 py-2 mt-2 bg-coral text-white rounded-full font-medium text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-primary-green text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-2">Our Programs</h1>
+            <p class="text-lg">Discover how we're making a difference in girls' and women's lives</p>
+        </div>
+    </header>
+
+    <!-- Programs Introduction -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary-green mb-6">Our Approach</h2>
+                <p class="text-gray-700 text-lg mb-8">
+                    At the Ramatu Foundation, we take a holistic approach to tackling challenges faced by girls and women in Sierra Leone. Our programs focus on education, awareness, mentorship, and community engagement to create sustainable change.
+                </p>
+                <p class="text-gray-700 text-lg">
+                    Each of our initiatives is carefully designed to address specific needs within our communities while building towards our broader mission of liberation and empowerment for all girls and women.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Programs -->
+    <section class="py-16" style="background-color: var(--bg-cream);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary-green mb-12 text-center">Our Core Programs</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('assets/program-education.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-green mb-4">Educational Support</h3>
+                        <p class="text-gray-700 mb-6">
+                            We provide educational materials, scholarships, and school fees for vulnerable girls, helping them stay in school and build a brighter future.
+                        </p>
+                        <ul class="text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> School supplies distribution</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Scholarship programs</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Tuition assistance</li>
+                        </ul>
+                        <a href="get-involved.html" class="bg-coral text-white px-4 py-2 rounded-full inline-block hover:opacity-90">Support This Program</a>
+                    </div>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('assets/program-mentorship.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-green mb-4">Mentorship Program</h3>
+                        <p class="text-gray-700 mb-6">
+                            Our mentorship initiatives connect girls with successful women who can guide them in their educational and career journeys.
+                        </p>
+                        <ul class="text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> One-on-one mentoring</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Leadership workshops</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Career development</li>
+                        </ul>
+                        <a href="get-involved.html" class="bg-coral text-white px-4 py-2 rounded-full inline-block hover:opacity-90">Support This Program</a>
+                    </div>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('assets/program-awareness.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-green mb-4">Awareness Campaigns</h3>
+                        <p class="text-gray-700 mb-6">
+                            We conduct regular awareness campaigns on gender-based violence, girls' rights, and the importance of education in communities.
+                        </p>
+                        <ul class="text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Community outreach</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Media campaigns</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Educational workshops</li>
+                        </ul>
+                        <a href="get-involved.html" class="bg-coral text-white px-4 py-2 rounded-full inline-block hover:opacity-90">Support This Program</a>
+                    </div>
+                </div>
+                
+                <!-- Program 4 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('assets/program-skills.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-green mb-4">Skills Training</h3>
+                        <p class="text-gray-700 mb-6">
+                            We provide vocational and entrepreneurial skills training to help women achieve economic independence and support their families.
+                        </p>
+                        <ul class="text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Vocational training</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Entrepreneurship</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Financial literacy</li>
+                        </ul>
+                        <a href="get-involved.html" class="bg-coral text-white px-4 py-2 rounded-full inline-block hover:opacity-90">Support This Program</a>
+                    </div>
+                </div>
+                
+                <!-- Program 5 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('assets/program-wellbeing.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-green mb-4">Health & Wellbeing</h3>
+                        <p class="text-gray-700 mb-6">
+                            We conduct health education campaigns and provide support for girls' access to healthcare and menstrual hygiene products.
+                        </p>
+                        <ul class="text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Menstrual hygiene kits</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Health education</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Psychosocial support</li>
+                        </ul>
+                        <a href="get-involved.html" class="bg-coral text-white px-4 py-2 rounded-full inline-block hover:opacity-90">Support This Program</a>
+                    </div>
+                </div>
+                
+                <!-- Program 6 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('assets/program-community.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary-green mb-4">Community Engagement</h3>
+                        <p class="text-gray-700 mb-6">
+                            We work with community leaders, parents, and men to create supportive environments for girls and women to thrive.
+                        </p>
+                        <ul class="text-gray-700 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Community dialogues</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Male engagement</li>
+                            <li><i class="fas fa-check text-primary-green mr-2"></i> Parent education</li>
+                        </ul>
+                        <a href="get-involved.html" class="bg-coral text-white px-4 py-2 rounded-full inline-block hover:opacity-90">Support This Program</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Banner -->
+    <section class="py-16 bg-coral text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Join Us in Making a Difference</h2>
+            <p class="text-lg mb-8 max-w-3xl mx-auto">
+                Our programs are making a real impact, but we need your support to reach more girls and women in need. Join us in this important work!
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="get-involved.html" class="bg-white text-coral hover:bg-gray-100 py-3 px-6 rounded-full font-medium">Donate Now</a>
+                <a href="get-involved.html" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-coral py-3 px-6 rounded-full font-medium">Volunteer With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white footer-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Vision</h3>
+                    <p class="text-gray-600">To see a safe Sierra Leone wherein all the girls and women are aware of their rights and responsibilities and are able to make their dreams come to reality.</p>
+                    <div class="mt-4">
+                        <p class="text-gray-600">Established 2019 in Sierra Leone</p>
+                        <p class="text-gray-600 font-semibold mt-2">"Making it happen for sustainable change"</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Mission</h3>
+                    <p class="text-gray-600">To be an effective agent in the liberation of the oppressed and marginalized girls and women from all forms of violence that stop them from achieving their economic, social, emotional and physical potential.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-primary-green">Home</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-primary-green">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-600 hover:text-primary-green">Programs</a></li>
+                        <li><a href="impact.html" class="text-gray-600 hover:text-primary-green">Our Impact</a></li>
+                        <li><a href="get-involved.html" class="text-gray-600 hover:text-primary-green">Get Involved</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-primary-green">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Contact Us</h3>
+                    <p class="text-gray-600">1 Fenty Drive New York Makeni</p>
+                    <p class="text-gray-600">Sierra Leone</p>
+                    <p class="text-gray-600">+23299766252/073764339</p>
+                    <p class="text-gray-600">sramatukarim@gmail.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://fb.me/ramatufoundationSL" class="text-gray-600 hover:text-primary-green text-2xl" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-10 pt-6 text-center text-gray-600">
+                <p>&copy; 2025 Ramatu Foundation for Girls' and Women's Empowerment. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

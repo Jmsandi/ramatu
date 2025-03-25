@@ -1,0 +1,513 @@
+/* Custom styles for the Ramatu Foundation website */
+
+/* Base styles */
+:root {
+    --primary: #7c3aed;
+    --primary-dark: #6d28d9;
+    --primary-light: #ddd6fe;
+    --primary-lighter: #f5f3ff;
+    --dark: #1f2937;
+    --light: #f9fafb;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary-green: #0a7a6b;
+    --coral: #e87d67;
+    --bg-cream: #f9f5eb;
+    --footer-dark: #2d3748; /* Added dark color for footer */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #4b5563;
+    background-color: var(--bg-cream);
+}
+
+/* Logo styling */
+.flex.items-center img {
+    transition: transform 0.4s ease;
+}
+
+.flex.items-center:hover img {
+    transform: scale(1.08);
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Background pattern for the hero section */
+.bg-pattern {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.2"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    opacity: 0.4;
+}
+
+/* Hero section styling */
+.bg-purple-800 {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    overflow: hidden;
+}
+
+.bg-purple-800:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle at 20% 150%, rgba(255,255,255,0.15) 0%, transparent 70%);
+}
+
+/* Animation for section headings */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom focus styles for form elements */
+input:focus, 
+textarea:focus, 
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+    transition: var(--transition);
+}
+
+/* Button styling */
+.bg-purple-600, 
+.bg-purple-700, 
+.hover\:bg-purple-700:hover, 
+.hover\:bg-purple-600:hover {
+    background-color: var(--primary);
+    transition: var(--transition);
+}
+
+.bg-purple-600:hover,
+.bg-purple-700:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.2), 0 4px 6px -2px rgba(124, 58, 237, 0.1);
+}
+
+/* White buttons */
+.bg-white.text-purple-700,
+.bg-white.text-purple-800 {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: var(--transition);
+}
+
+.bg-white.text-purple-700:hover,
+.bg-white.text-purple-800:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Border buttons */
+.border.border-white {
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.border.border-white:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    transition: var(--transition);
+}
+
+.border.border-white:hover:before {
+    width: 100%;
+}
+
+/* Navigation styling */
+nav.bg-purple-700 {
+    background-color: var(--primary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.hover\:text-purple-200:hover {
+    color: var(--primary-light);
+    transition: var(--transition);
+}
+
+/* Custom underline style for active navigation */
+.underline {
+    position: relative;
+}
+
+.underline:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: white;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.underline:hover:after,
+.underline.active:after {
+    width: 100%;
+}
+
+/* Custom style for blockquotes in testimonials */
+.bg-purple-50 .fas.fa-quote-left {
+    font-size: 2.5rem;
+    margin-top: -20px;
+    margin-left: -10px;
+    opacity: 0.3;
+    color: var(--primary);
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Card styling */
+.shadow-md {
+    transition: var(--transition);
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.shadow-md:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.bg-purple-50 {
+    background-color: var(--primary-lighter);
+    border-radius: 0.75rem;
+}
+
+/* Stats cards */
+.text-4xl.font-bold.text-purple-600 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+/* Improved list styles */
+ul.list-disc li {
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+/* Footer styling */
+footer.bg-gray-800 {
+    background-color: var(--dark);
+}
+
+footer a {
+    transition: var(--transition);
+}
+
+footer a:hover {
+    transform: translateX(3px);
+}
+
+/* Enhanced mobile menu interactions */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+#mobile-menu.hidden {
+    max-height: 0;
+}
+
+#mobile-menu:not(.hidden) {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Custom styles for FAQ accordions */
+.bg-gray-50.p-6.rounded-lg.shadow-sm h3 {
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+    transition: var(--transition);
+}
+
+.bg-gray-50.p-6.rounded-lg.shadow-sm h3:after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.bg-gray-50.p-6.rounded-lg.shadow-sm h3.text-purple-900:after {
+    content: "-";
+    transform: rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .text-4xl {
+        font-size: 1.875rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .py-20 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    .py-16 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .bg-purple-700, 
+    .bg-purple-800, 
+    .bg-gray-800 {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    .text-white,
+    .text-gray-300 {
+        color: black !important;
+    }
+    
+    nav, 
+    footer,
+    .py-16.bg-purple-700 {
+        display: none !important;
+    }
+    
+    * {
+        box-shadow: none !important;
+    }
+}
+
+/* Color Classes */
+.bg-primary-green {
+    background-color: var(--primary-green);
+}
+
+.text-primary-green {
+    color: var(--primary-green);
+}
+
+.bg-coral {
+    background-color: var(--coral);
+}
+
+.text-coral {
+    color: var(--coral);
+}
+
+/* Button Styles */
+.btn-coral {
+    background-color: var(--coral);
+    color: white;
+    border-radius: 30px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-coral:hover {
+    opacity: 0.9;
+}
+
+/* Card Styles */
+.rounded-card {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 8px;
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--coral);
+}
+
+/* Circle Icon */
+.stat-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-green);
+    color: white;
+}
+
+/* Page Headers */
+.page-header {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 3rem 0;
+}
+
+/* Section Styles */
+.content-section {
+    padding: 4rem 0;
+}
+
+.content-section.cream-bg {
+    background-color: var(--bg-cream);
+}
+
+.content-section.white-bg {
+    background-color: white;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--footer-dark);
+    color: #f9fafb;
+    padding: 3rem 0;
+}
+
+/* Card Shadows */
+.card-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    background-color: var(--bg-cream);
+}
+
+/* Navigation */
+.nav-link {
+    color: #4a5568;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-green);
+}
+
+/* Value Card */
+.value-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Program Card */
+.program-card {
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Elements with green backgrounds */
+.green-bg-element {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+/* Elements with coral backgrounds */
+.coral-bg-element {
+    background-color: var(--coral);
+    color: white;
+}
+
+/* Add dark footer style */
+.footer-dark {
+    background-color: var(--footer-dark);
+    color: #f9fafb;
+}
+
+.footer-dark h3 {
+    color: white;
+}
+
+.footer-dark p, 
+.footer-dark li a {
+    color: #cbd5e0;
+}
+
+.footer-dark li a:hover {
+    color: var(--coral);
+}
+
+.footer-dark .border-t {
+    border-color: #4a5568;
+}
+
+.footer-dark .text-gray-600 {
+    color: #cbd5e0;
+}
+
+.footer-dark a.text-primary-green {
+    color: var(--coral);
+}
+
+.footer-dark a.text-primary-green:hover {
+    color: white;
+}
+
+.footer-dark .text-gray-600.hover\:text-primary-green:hover {
+    color: var(--coral);
+} 
