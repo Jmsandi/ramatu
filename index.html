@@ -100,7 +100,7 @@
             </div>
         </div>
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div id="mobile-menu" class="hidden md:hidden">
+        <div id="mobile-menu" class="hidden md:hidden mobile-menu">
             <div class="bg-cream px-4 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="block px-3 py-2 rounded-md font-medium text-primary-green">Home</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">About Us</a>
@@ -153,7 +153,7 @@
                     <div class="bg-white rounded-3xl shadow-lg p-6 overflow-hidden mb-8 relative z-10">
                         <div class="flex flex-col md:flex-row">
                             <div class="w-full md:w-1/2 md:pr-4">
-                                <div class="text-coral text-2xl font-bold">$20<span class="text-sm font-normal">/mon</span></div>
+                                <div class="text-coral text-2xl font-bold">$10<span class="text-sm font-normal">/mon</span></div>
                                 <p class="text-xs text-gray-500 mt-1">Or Make One Time Donation</p>
                                 
                                 <h3 class="text-2xl font-bold text-gray-800 mt-4">Support Girls' Education</h3>
@@ -165,18 +165,28 @@
                             </div>
                             <div class="w-full md:w-1/2 mt-4 md:mt-0">
                                 <div class="rounded-3xl overflow-hidden h-48">
-                                    <img src="assets/pic3.png" alt="Children in need" class="w-full h-full object-cover">
+                                    <img src="assets/pic4.png" alt="Children in need" class="w-full h-full object-cover">
                                 </div>
                             </div>
                         </div>
                     </div>
                     
+                    <!-- Mobile Donation Card (visible only on mobile) -->
+                    <div class="bg-white rounded-3xl shadow-lg p-4 w-full mb-6 md:hidden">
+                        <div class="flex flex-col">
+                            <div class="text-coral text-lg font-bold">$20<span class="text-xs font-normal">/mon</span></div>
+                            <h4 class="text-sm font-semibold mt-1">End Gender-Based Violence</h4>
+                            <div class="text-xs text-gray-500 mt-1">Campaign against FGM, forced marriage, and more</div>
+                            <a href="get-involved.html" class="btn-coral w-full mt-3 text-sm py-2 block text-center">Donate Now</a>
+                        </div>
+                    </div>
+                    
                     <!-- Small Donation Card -->
-                    <div class="bg-white rounded-3xl shadow-lg p-4 w-48 absolute top-48 right-10 z-20">
+                    <div class="bg-white rounded-3xl shadow-lg p-4 w-full md:w-48 absolute top-48 right-0 md:right-10 z-20 hidden md:block">
                         <div class="text-coral text-lg font-bold">$20<span class="text-xs font-normal">/mon</span></div>
                         <h4 class="text-sm font-semibold mt-1">End Gender-Based Violence</h4>
                         <div class="text-xs text-gray-500 mt-1">Campaign against FGM, forced marriage, and more</div>
-                        <a href="get-involved.html" class="btn-coral w-full mt-2 text-sm py-2 block text-center">Donate Now</a>
+                        <a href="get-involved.html" class="btn-coral w-full mt-3 text-sm py-2 block text-center">Donate Now</a>
                     </div>
                     
                     <!-- Circle Icon -->
@@ -245,7 +255,7 @@
                     </div>
                     <div class="w-full md:w-1/2 relative">
                         <div class="h-full">
-                            <img src="assets/pic1.png" alt="Children in Sierra Leone" class="w-full h-full object-cover">
+                            <img src="assets/program-wellbeing.jpeg" alt="Children in Sierra Leone" class="w-full h-full object-cover">
                         </div>
                         <!-- Circle Icon -->
                         <div class="stat-circle absolute right-6 bottom-6 flex items-center justify-center">

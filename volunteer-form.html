@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Application Form | Ramatu Foundation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="py-6 sticky top-0 z-50 bg-transparent">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/logo.png" alt="Ramatu Foundation Logo" class="h-12 mr-3">
+                        <span class="text-xl font-bold text-primary-green">Ramatu Foundation</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="font-medium text-gray-600 hover:text-primary-green">Home</a>
+                    <a href="about.html" class="font-medium text-gray-600 hover:text-primary-green">About Us</a>
+                    <a href="programs.html" class="font-medium text-gray-600 hover:text-primary-green">Programs</a>
+                    <a href="impact.html" class="font-medium text-gray-600 hover:text-primary-green">Our Impact</a>
+                    <a href="get-involved.html" class="font-medium text-primary-green">Get Involved</a>
+                    <a href="contact.html" class="font-medium text-gray-600 hover:text-primary-green">Contact</a>
+                </div>
+                <div>
+                    <a href="get-involved.html" class="bg-coral text-white px-5 py-2.5 rounded-full font-semibold hover:opacity-90">
+                        Donate <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="outline-none text-primary-green">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div id="mobile-menu" class="hidden md:hidden mobile-menu">
+            <div class="bg-cream px-4 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">About Us</a>
+                <a href="programs.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Programs</a>
+                <a href="impact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Our Impact</a>
+                <a href="get-involved.html" class="block px-3 py-2 rounded-md font-medium text-primary-green">Get Involved</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Contact</a>
+                <a href="get-involved.html" class="block px-3 py-2 mt-2 bg-coral text-white rounded-full font-medium text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-primary-green text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-2">Volunteer Application Form</h1>
+            <p class="text-lg">Thank you for your interest in volunteering with the Ramatu Foundation</p>
+        </div>
+    </header>
+
+    <!-- Volunteer Form Section -->
+    <section class="py-16" style="background-color: var(--bg-cream);">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto bg-white shadow-md rounded-3xl p-8">
+                <h2 class="text-2xl font-bold text-primary-green mb-6">Volunteer Application</h2>
+                <p class="text-gray-700 mb-8">
+                    Please complete all fields below. We'll review your application and get back to you within a week to discuss potential volunteer opportunities and next steps.
+                </p>
+                
+                <form id="volunteerForm" action="#" method="POST" class="space-y-6">
+                    <!-- Personal Information -->
+                    <div>
+                        <h3 class="text-xl font-bold text-coral mb-4">Personal Information</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green">
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green">
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <label for="location" class="block text-gray-700 font-medium mb-2">Location (Country/City) *</label>
+                            <input type="text" id="location" name="location" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green">
+                        </div>
+                    </div>
+                    
+                    <!-- Volunteer Interests -->
+                    <div>
+                        <h3 class="text-xl font-bold text-coral mb-4">Volunteer Interests</h3>
+                        
+                        <div>
+                            <label for="volunteerRole" class="block text-gray-700 font-medium mb-2">Type of Volunteer Role Interested In *</label>
+                            <select id="volunteerRole" name="volunteerRole" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green">
+                                <option value="" disabled selected>Select a role</option>
+                                <option value="Teaching">Teaching/Education Support</option>
+                                <option value="Mentorship">Virtual Mentorship</option>
+                                <option value="Fundraising">Fundraising</option>
+                                <option value="SkillsBased">Skills-Based Volunteering</option>
+                                <option value="Advocacy">Advocacy</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mt-4" id="otherRoleDiv" style="display: none;">
+                            <label for="otherRole" class="block text-gray-700 font-medium mb-2">If "Other", please specify:</label>
+                            <input type="text" id="otherRole" name="otherRole"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green">
+                        </div>
+                        
+                        <div class="mt-4">
+                            <label for="skills" class="block text-gray-700 font-medium mb-2">Relevant Skills and Experience *</label>
+                            <textarea id="skills" name="skills" rows="4" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Availability -->
+                    <div>
+                        <h3 class="text-xl font-bold text-coral mb-4">Availability</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="hoursPerWeek" class="block text-gray-700 font-medium mb-2">Hours Available Per Week *</label>
+                                <select id="hoursPerWeek" name="hoursPerWeek" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green">
+                                    <option value="" disabled selected>Select hours</option>
+                                    <option value="1-3">1-3 hours</option>
+                                    <option value="4-6">4-6 hours</option>
+                                    <option value="7-10">7-10 hours</option>
+                                    <option value="10+">10+ hours</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="duration" class="block text-gray-700 font-medium mb-2">Duration of Commitment *</label>
+                                <select id="duration" name="duration" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green">
+                                    <option value="" disabled selected>Select duration</option>
+                                    <option value="1-3 months">1-3 months</option>
+                                    <option value="3-6 months">3-6 months</option>
+                                    <option value="6-12 months">6-12 months</option>
+                                    <option value="1+ year">1+ year</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Motivation -->
+                    <div>
+                        <h3 class="text-xl font-bold text-coral mb-4">Motivation</h3>
+                        
+                        <div>
+                            <label for="statement" class="block text-gray-700 font-medium mb-2">Why do you want to volunteer with the Ramatu Foundation? *</label>
+                            <textarea id="statement" name="statement" rows="5" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Information -->
+                    <div>
+                        <h3 class="text-xl font-bold text-coral mb-4">Additional Information</h3>
+                        
+                        <div>
+                            <label for="additionalInfo" class="block text-gray-700 font-medium mb-2">Is there anything else you'd like us to know?</label>
+                            <textarea id="additionalInfo" name="additionalInfo" rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-primary-green"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="mt-8 text-center">
+                        <button type="submit" class="bg-primary-green text-white hover:bg-green-700 py-3 px-8 rounded-full font-medium">
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="formSuccess" class="hidden mt-8 p-4 bg-green-100 text-green-800 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2">Thank You for Your Application!</h3>
+                    <p>We've received your volunteer application and will be in touch within a week to discuss next steps.</p>
+                </div>
+                
+                <div id="formError" class="hidden mt-8 p-4 bg-red-100 text-red-800 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2">Error Submitting Form</h3>
+                    <p>There was a problem submitting your application. Please try again or contact us directly at <a href="mailto:sramatukarim@gmail.com" class="text-primary-green hover:underline">sramatukarim@gmail.com</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-coral text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Other Ways to Get Involved</h2>
+            <p class="text-lg mb-8 max-w-3xl mx-auto">
+                Besides volunteering, there are many other ways you can support the Ramatu Foundation's mission to empower girls and women in Sierra Leone.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="get-involved.html#donation-options" class="bg-white text-coral hover:bg-gray-100 py-3 px-8 rounded-full font-medium">Donate Now</a>
+                <a href="get-involved.html#partnership-options" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-coral py-3 px-8 rounded-full font-medium">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white footer-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Vision</h3>
+                    <p class="text-gray-600">To see a safe Sierra Leone wherein all the girls and women are aware of their rights and responsibilities and are able to make their dreams come to reality.</p>
+                    <div class="mt-4">
+                        <p class="text-gray-600">Established 2019 in Sierra Leone</p>
+                        <p class="text-gray-600 font-semibold mt-2">"Making it happen for sustainable change"</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Mission</h3>
+                    <p class="text-gray-600">To be an effective agent in the liberation of the oppressed and marginalized girls and women from all forms of violence that stop them from achieving their economic, social, emotional and physical potential.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-primary-green">Home</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-primary-green">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-600 hover:text-primary-green">Programs</a></li>
+                        <li><a href="impact.html" class="text-gray-600 hover:text-primary-green">Our Impact</a></li>
+                        <li><a href="get-involved.html" class="text-gray-600 hover:text-primary-green">Get Involved</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-primary-green">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Contact Us</h3>
+                    <p class="text-gray-600">1 Fenty Drive New York Makeni</p>
+                    <p class="text-gray-600">Sierra Leone</p>
+                    <p class="text-gray-600">+23299766252/073764339</p>
+                    <p class="text-gray-600">sramatukarim@gmail.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://fb.me/ramatufoundationSL" class="text-gray-600 hover:text-primary-green text-2xl" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-10 pt-6 text-center text-gray-600">
+                <p>&copy; 2025 Ramatu Foundation for Girls' and Women's Empowerment. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Section End -->
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

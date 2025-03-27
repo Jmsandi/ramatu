@@ -82,6 +82,59 @@ document.addEventListener('DOMContentLoaded', function() {
     
     highlightNavLink();
 
+    // Volunteer form functionality - For the volunteer application form
+    const volunteerRoleSelect = document.getElementById('volunteerRole');
+    const otherRoleDiv = document.getElementById('otherRoleDiv');
+    const volunteerForm = document.getElementById('volunteerForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+    
+    if (volunteerRoleSelect && otherRoleDiv) {
+        volunteerRoleSelect.addEventListener('change', function() {
+            if (this.value === 'Other') {
+                otherRoleDiv.style.display = 'block';
+            } else {
+                otherRoleDiv.style.display = 'none';
+            }
+        });
+    }
+    
+    if (volunteerForm && formSuccess && formError) {
+        volunteerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const requiredFields = volunteerForm.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('border-red-500');
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+            
+            if (isValid) {
+                // Show success message
+                volunteerForm.reset();
+                formSuccess.classList.remove('hidden');
+                formError.classList.add('hidden');
+                
+                // Scroll to success message
+                formSuccess.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Show error message
+                formError.classList.remove('hidden');
+                formSuccess.classList.add('hidden');
+                
+                // Scroll to error message
+                formError.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
