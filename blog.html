@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Ramatu Foundation for Girls' and Women's Empowerment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #0a7a6b;
+            --coral: #e87d67;
+            --bg-cream: #f9f5eb;
+        }
+        body {
+            background-color: var(--bg-cream);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .bg-primary-green {
+            background-color: var(--primary-green);
+        }
+        .text-primary-green {
+            color: var(--primary-green);
+        }
+        .bg-coral {
+            background-color: var(--coral);
+        }
+        .text-coral {
+            color: var(--coral);
+        }
+        .btn-coral {
+            background-color: var(--coral);
+            color: white;
+            border-radius: 30px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-coral:hover {
+            opacity: 0.9;
+        }
+        .rounded-card {
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        .blog-card {
+            transition: transform 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Video Aspect Ratio Handling */
+        .aspect-w-16 {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .aspect-w-16 iframe,
+        .aspect-w-16 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Gallery Item Hover Effect */
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Facebook Embed Container */
+        .fb-page-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .fb-page-container {
+                padding: 0 15px;
+            }
+            
+            .fb-page {
+                width: 100% !important;
+            }
+        }
+        
+        /* Testimonial Quote Style */
+        .testimonial-quote {
+            position: relative;
+        }
+        
+        .testimonial-quote .fa-quote-left {
+            opacity: 0.2;
+            font-size: 1.5rem;
+        }
+        
+        /* Gallery Image Zoom Effect */
+        .image-container {
+            overflow: hidden;
+        }
+        
+        .image-container img {
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="py-6 sticky top-0 z-50 bg-transparent">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/logo.png" alt="Ramatu Foundation Logo" class="h-12 mr-3">
+                        <span class="text-xl font-bold text-primary-green">Ramatu Foundation</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-purple-200 font-medium">Home</a>
+                    <a href="about.html" class="hover:text-purple-200 font-medium">About Us</a>
+                    <a href="programs.html" class="hover:text-purple-200 font-medium">Programs</a>
+                    <a href="impact.html" class="hover:text-purple-200 font-medium">Our Impact</a>
+                    <a href="blog.html" class="hover:text-purple-200 font-medium underline">Blog</a>
+                    <a href="get-involved.html" class="hover:text-purple-200 font-medium">Get Involved</a>
+                    <a href="contact.html" class="hover:text-purple-200 font-medium">Contact</a>
+                </div>
+                <div>
+                    <a href="get-involved.html" class="bg-coral text-white px-5 py-2.5 rounded-full font-semibold hover:opacity-90">
+                        Donate <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="outline-none text-primary-green">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div id="mobile-menu" class="hidden md:hidden mobile-menu">
+            <div class="bg-cream px-4 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">About Us</a>
+                <a href="programs.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Programs</a>
+                <a href="impact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Impact</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md font-medium text-primary-green">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md font-medium text-gray-600 hover:text-primary-green">Contact Us</a>
+                <a href="get-involved.html" class="block px-3 py-2 mt-2 bg-coral text-white rounded-full font-medium text-center">Get Involved</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-10 md:py-16 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <h5 class="text-coral mb-3">Stay Updated</h5>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                    Our Blog & News
+                </h1>
+                <p class="text-gray-600 mb-8">
+                    Stay connected with the latest updates, success stories, and initiatives from the Ramatu Foundation. Follow our journey as we work to empower girls and women in Sierra Leone.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Facebook Post Section -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-primary-green mb-8">Featured Content</h2>
+            
+            <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-8">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Latest from Our Facebook Page</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-700 mb-6">
+                                Stay connected with the Ramatu Foundation through our Facebook page. Here you'll find our latest events, initiatives, success stories, and real-time updates about our work empowering girls and women in Sierra Leone.
+                            </p>
+                            
+                            <div class="bg-primary-green bg-opacity-10 rounded-xl p-4 mb-6">
+                                <h4 class="font-bold text-primary-green mb-2">Why Follow Our Facebook Page?</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                        <span>Real-time updates on our community outreach programs</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                        <span>Stories of transformation from the girls we support</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                        <span>Announcements about upcoming events and initiatives</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-coral mt-1 mr-2"></i>
+                                        <span>Opportunities to get involved and make a difference</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="text-center mt-6">
+                                <a href="https://www.facebook.com/RFGWESL" target="_blank" class="btn-coral inline-block">
+                                    Visit Our Facebook Page <i class="fas fa-external-link-alt ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Facebook Page Embed -->
+                        <div class="fb-page-container">
+                            <div class="fb-page" 
+                                 data-href="https://www.facebook.com/RFGWESL" 
+                                 data-tabs="timeline" 
+                                 data-width="500" 
+                                 data-height="700" 
+                                 data-small-header="false" 
+                                 data-adapt-container-width="true" 
+                                 data-hide-cover="false" 
+                                 data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/RFGWESL" class="fb-xfbml-parse-ignore">
+                                    <a href="https://www.facebook.com/RFGWESL">Ramatu Foundation for Girls' and Women's Empowerment</a>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Facebook Activity Section -->
+    <section class="py-12 bg-primary-green bg-opacity-5">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary-green mb-10">Highlights from Facebook</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Facebook Highlight 1 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden gallery-item">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="assets/logo.png" alt="Ramatu Foundation" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold text-gray-800">Ramatu Foundation</h4>
+                                <div class="text-xs text-gray-500">March 20, 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            "Today we celebrated International Women's Day with our community in Makeni. We are proud to stand with women and girls globally in the fight for equality and empowerment. #IWD2024 #EmpowerGirls"
+                        </p>
+                        <div class="rounded-xl overflow-hidden image-container mb-4">
+                            <img src="assets/program-wellbeing.jpeg" alt="International Women's Day celebration" class="w-full">
+                        </div>
+                        <div class="flex space-x-4">
+                            <div class="text-gray-600 text-sm"><i class="far fa-heart mr-1"></i> 124</div>
+                            <div class="text-gray-600 text-sm"><i class="far fa-comment mr-1"></i> 32</div>
+                            <div class="text-gray-600 text-sm"><i class="far fa-share-square mr-1"></i> 18</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Facebook Highlight 2 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden gallery-item">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="assets/logo.png" alt="Ramatu Foundation" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold text-gray-800">Ramatu Foundation</h4>
+                                <div class="text-xs text-gray-500">February 15, 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            "We're excited to announce that 15 more girls have received educational scholarships through our Girls' Education Program. Education is a powerful tool for breaking the cycle of poverty and creating lasting change."
+                        </p>
+                        <div class="rounded-xl overflow-hidden image-container mb-4">
+                            <img src="assets/pic4.png" alt="Girls receiving scholarships" class="w-full">
+                        </div>
+                        <div class="flex space-x-4">
+                            <div class="text-gray-600 text-sm"><i class="far fa-heart mr-1"></i> 203</div>
+                            <div class="text-gray-600 text-sm"><i class="far fa-comment mr-1"></i> 45</div>
+                            <div class="text-gray-600 text-sm"><i class="far fa-share-square mr-1"></i> 37</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Facebook Highlight 3 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden gallery-item">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="assets/logo.png" alt="Ramatu Foundation" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold text-gray-800">Ramatu Foundation</h4>
+                                <div class="text-xs text-gray-500">January 28, 2024</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            "Our community health workshop reached over 200 women and girls in the New York community of Makeni today. Together, we're promoting better health education and reproductive rights awareness for all."
+                        </p>
+                        <div class="rounded-xl overflow-hidden image-container mb-4">
+                            <img src="assets/program-awareness.jpeg" alt="Community health workshop" class="w-full">
+                        </div>
+                        <div class="flex space-x-4">
+                            <div class="text-gray-600 text-sm"><i class="far fa-heart mr-1"></i> 156</div>
+                            <div class="text-gray-600 text-sm"><i class="far fa-comment mr-1"></i> 28</div>
+                            <div class="text-gray-600 text-sm"><i class="far fa-share-square mr-1"></i> 22</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="https://www.facebook.com/RFGWESL" target="_blank" class="btn-coral inline-block">
+                    See More on Facebook <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Videos Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary-green mb-10">Featured Videos</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Video 1 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden mb-12">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Educational Outreach Program</h3>
+                        <p class="text-gray-700 mb-6">
+                            Our educational outreach team visited schools in the Bombali district to distribute learning materials and conduct workshops on the importance of girls' education. This initiative is part of our broader effort to reduce school dropout rates among girls and promote gender equality in education.
+                        </p>
+                        <div class="bg-gray-100 p-1 rounded-xl mb-6">
+                            <!-- Facebook Video Embed (Using iframe as placeholder - would be replaced with actual FB video embed) -->
+                            <div class="aspect-w-16">
+                                <div class="fb-video" 
+                                    data-href="https://www.facebook.com/RFGWESL/videos/123456789012345" 
+                                    data-width="500" 
+                                    data-show-text="false">
+                                    <blockquote cite="https://www.facebook.com/RFGWESL/videos/123456789012345" class="fb-xfbml-parse-ignore">
+                                        <a href="https://www.facebook.com/RFGWESL">Educational Outreach Program</a>
+                                    </blockquote>
+                                </div>
+                                <!-- Fallback image in case video doesn't load -->
+                                <img src="assets/program-education.jpeg" alt="Educational Outreach Program" class="w-full rounded-xl">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="text-gray-500 text-sm">Posted on January 15, 2024</div>
+                            <div class="flex space-x-4">
+                                <div class="text-gray-600 text-sm"><i class="far fa-heart mr-1"></i> 89</div>
+                                <div class="text-gray-600 text-sm"><i class="far fa-comment mr-1"></i> 12</div>
+                                <div class="text-gray-600 text-sm"><i class="far fa-share-square mr-1"></i> 34</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden mb-12">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Community Health and Wellbeing Workshop</h3>
+                        <p class="text-gray-700 mb-6">
+                            Our recent health workshop in the New York community of Makeni focused on reproductive health education, menstrual hygiene management, and preventive healthcare. By empowering women and girls with knowledge about their bodies and health rights, we're helping them make informed decisions for themselves and their families.
+                        </p>
+                        <div class="bg-gray-100 p-1 rounded-xl mb-6">
+                            <!-- Facebook Video Embed (Using iframe as placeholder - would be replaced with actual FB video embed) -->
+                            <div class="aspect-w-16">
+                                <div class="fb-video" 
+                                    data-href="https://www.facebook.com/RFGWESL/videos/987654321098765" 
+                                    data-width="500" 
+                                    data-show-text="false">
+                                    <blockquote cite="https://www.facebook.com/RFGWESL/videos/987654321098765" class="fb-xfbml-parse-ignore">
+                                        <a href="https://www.facebook.com/RFGWESL">Community Health Workshop</a>
+                                    </blockquote>
+                                </div>
+                                <!-- Fallback image in case video doesn't load -->
+                                <img src="assets/program-wellbeing.jpeg" alt="Community Health Workshop" class="w-full rounded-xl">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="text-gray-500 text-sm">Posted on February 3, 2024</div>
+                            <div class="flex space-x-4">
+                                <div class="text-gray-600 text-sm"><i class="far fa-heart mr-1"></i> 112</div>
+                                <div class="text-gray-600 text-sm"><i class="far fa-comment mr-1"></i> 24</div>
+                                <div class="text-gray-600 text-sm"><i class="far fa-share-square mr-1"></i> 17</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="py-16" style="background-color: var(--bg-cream);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary-green mb-10">Photo Gallery</h2>
+            
+            <div class="max-w-5xl mx-auto">
+                <!-- Gallery Row 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Gallery Item 1 -->
+                    <div class="bg-white shadow-md rounded-3xl overflow-hidden gallery-item">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary-green mb-2">Girls' Empowerment Workshop</h3>
+                            <p class="text-gray-700 mb-4">
+                                Our recent workshop brought together 40 girls from various schools in Makeni to learn leadership skills, build confidence, and discuss important topics like gender equality and girls' rights. These workshops are creating a generation of empowered young women who will lead change in their communities.
+                            </p>
+                            <div class="rounded-xl overflow-hidden image-container">
+                                <img src="assets/program-mentorship.jpg" alt="Girls' Empowerment Workshop" class="w-full">
+                            </div>
+                            <div class="text-gray-500 text-sm mt-2">March 5, 2024</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 2 -->
+                    <div class="bg-white shadow-md rounded-3xl overflow-hidden gallery-item">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary-green mb-2">Community Outreach Program</h3>
+                            <p class="text-gray-700 mb-4">
+                                Our team visited the Ropolon community to engage with local leaders and families about the importance of girls' education and preventing early marriage. Community support is crucial for creating an environment where girls can thrive and reach their full potential.
+                            </p>
+                            <div class="rounded-xl overflow-hidden image-container">
+                                <img src="assets/program-community.jpg" alt="Community Outreach Program" class="w-full">
+                            </div>
+                            <div class="text-gray-500 text-sm mt-2">February 20, 2024</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Row 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Gallery Item 3 -->
+                    <div class="bg-white shadow-md rounded-3xl overflow-hidden gallery-item">
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-primary-green mb-2">Scholarship Distribution</h3>
+                            <p class="text-gray-700 mb-4">
+                                Distributing scholarships to deserving young girls who can now continue their education without financial barriers.
+                            </p>
+                            <div class="rounded-xl overflow-hidden image-container">
+                                <img src="assets/program-education.jpeg" alt="Scholarship Distribution" class="w-full">
+                            </div>
+                            <div class="text-gray-500 text-sm mt-2">January 30, 2024</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 4 -->
+                    <div class="bg-white shadow-md rounded-3xl overflow-hidden gallery-item">
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-primary-green mb-2">Skills Training Workshop</h3>
+                            <p class="text-gray-700 mb-4">
+                                Providing vocational skills training to women in the Makneh village, helping them gain economic independence and support their families.
+                            </p>
+                            <div class="rounded-xl overflow-hidden image-container">
+                                <img src="assets/program-skills.jpg" alt="Skills Training Workshop" class="w-full">
+                            </div>
+                            <div class="text-gray-500 text-sm mt-2">January 15, 2024</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 5 -->
+                    <div class="bg-white shadow-md rounded-3xl overflow-hidden gallery-item">
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-primary-green mb-2">Anti-Violence Campaign</h3>
+                            <p class="text-gray-700 mb-4">
+                                Our team raising awareness about gender-based violence and advocating for the rights and safety of women and girls in Sierra Leone.
+                            </p>
+                            <div class="rounded-xl overflow-hidden image-container">
+                                <img src="assets/program-awareness.jpeg" alt="Anti-Violence Campaign" class="w-full">
+                            </div>
+                            <div class="text-gray-500 text-sm mt-2">December 10, 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="https://www.facebook.com/RFGWESL/photos" target="_blank" class="btn-coral inline-block">
+                    View More Photos <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary-green mb-10">Voices from Our Community</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white shadow-md rounded-3xl overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center text-white mr-4">
+                                    <span class="text-xl font-bold">A</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Aminata K.</h4>
+                                    <div class="text-xs text-gray-500">Scholarship Recipient</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 testimonial-quote">
+                                "The scholarship from Ramatu Foundation has changed my life. I am the first girl in my family to attend secondary school, and I dream of becoming a doctor one day. Thank you for giving me this opportunity to build a better future."
+                            </p>
+                            <div class="text-coral"><i class="fas fa-quote-left"></i></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white shadow-md rounded-3xl overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center text-white mr-4">
+                                    <span class="text-xl font-bold">M</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Mariama S.</h4>
+                                    <div class="text-xs text-gray-500">Community Leader</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4 testimonial-quote">
+                                "The Ramatu Foundation has brought positive change to our community. Their workshops on gender-based violence have opened many eyes, and now our men are also advocating for girls' education and women's rights. We are seeing real transformation."
+                            </p>
+                            <div class="text-coral"><i class="fas fa-quote-left"></i></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Testimonial -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden mt-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary-green mb-4">Impact Stories: In Their Own Words</h3>
+                        <p class="text-gray-700 mb-6">
+                            Hear directly from the girls and women whose lives have been transformed through our programs. These powerful testimonials showcase the real impact of our work in Sierra Leone communities.
+                        </p>
+                        <div class="bg-gray-100 p-1 rounded-xl mb-6">
+                            <!-- Facebook Video Embed (Using iframe as placeholder) -->
+                            <div class="aspect-w-16">
+                                <div class="fb-video" 
+                                    data-href="https://www.facebook.com/RFGWESL/videos/567891234509876" 
+                                    data-width="500" 
+                                    data-show-text="false">
+                                    <blockquote cite="https://www.facebook.com/RFGWESL/videos/567891234509876" class="fb-xfbml-parse-ignore">
+                                        <a href="https://www.facebook.com/RFGWESL">Impact Stories: In Their Own Words</a>
+                                    </blockquote>
+                                </div>
+                                <!-- Fallback image in case video doesn't load -->
+                                <img src="assets/pic4.png" alt="Impact Stories Testimonials" class="w-full rounded-xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="py-12" style="background-color: var(--bg-cream);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary-green mb-10">Recent Blog Posts</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden blog-card">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/program-wellbeing.jpeg" alt="Education Initiatives" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-2">March 15, 2024</div>
+                        <h3 class="text-xl font-bold text-primary-green mb-3">Empowering Girls Through Education</h3>
+                        <p class="text-gray-700 mb-4">
+                            Our recent initiatives to support girls' education in Makeni have shown remarkable progress, with over 40 girls receiving financial support.
+                        </p>
+                        <a href="#" class="text-coral font-medium hover:underline">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden blog-card">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/pic4.png" alt="Community Engagement" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-2">February 28, 2024</div>
+                        <h3 class="text-xl font-bold text-primary-green mb-3">Community Outreach Program Success</h3>
+                        <p class="text-gray-700 mb-4">
+                            Our recent community outreach program reached over 500 individuals, providing essential education about gender equality and women's rights.
+                        </p>
+                        <a href="#" class="text-coral font-medium hover:underline">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white shadow-md rounded-3xl overflow-hidden blog-card">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/pic4.png" alt="Health Workshop" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-2">February 10, 2024</div>
+                        <h3 class="text-xl font-bold text-primary-green mb-3">Health & Wellbeing Workshop</h3>
+                        <p class="text-gray-700 mb-4">
+                            Our recent workshop on sexual reproductive health and rights provided valuable information to young women in the New York community of Makeni.
+                        </p>
+                        <a href="#" class="text-coral font-medium hover:underline">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="btn-coral inline-block">View All Blog Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="bg-primary-green rounded-3xl p-8 text-white text-center">
+                <h2 class="text-3xl font-bold mb-6">Subscribe to Our Newsletter</h2>
+                <p class="max-w-2xl mx-auto mb-8">
+                    Stay updated with our latest news, events, and initiatives. Join our community of supporters and advocates for girls' and women's empowerment.
+                </p>
+                
+                <form class="max-w-lg mx-auto">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input type="email" placeholder="Your Email Address" class="rounded-full py-3 px-6 w-full text-gray-800 focus:outline-none">
+                        <button type="submit" class="bg-coral rounded-full py-3 px-6 font-semibold hover:opacity-90 whitespace-nowrap">
+                            Subscribe Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white footer-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Vision</h3>
+                    <p class="text-gray-600">To see a safe Sierra Leone wherein all the girls and women are aware of their rights and responsibilities and are able to make their dreams come to reality.</p>
+                    <div class="mt-4">
+                        <p class="text-gray-600">Established 2019 in Sierra Leone</p>
+                        <p class="text-gray-600 font-semibold mt-2">"Making it happen for sustainable change"</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Our Mission</h3>
+                    <p class="text-gray-600">To be an effective agent in the liberation of the oppressed and marginalized girls and women from all forms of violence that stop them from achieving their economic, social, emotional and physical potential.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-primary-green">Home</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-primary-green">About Us</a></li>
+                        <li><a href="programs.html" class="text-gray-600 hover:text-primary-green">Programs</a></li>
+                        <li><a href="impact.html" class="text-gray-600 hover:text-primary-green">Our Impact</a></li>
+                        <li><a href="blog.html" class="text-gray-600 hover:text-primary-green">Blog</a></li>
+                        <li><a href="get-involved.html" class="text-gray-600 hover:text-primary-green">Get Involved</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-primary-green">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-green mb-4">Contact Us</h3>
+                    <p class="text-gray-600">1 Fenty Drive New York Makeni</p>
+                    <p class="text-gray-600">Sierra Leone</p>
+                    <p class="text-gray-600">+23299766252/073764339</p>
+                    <p class="text-gray-600">sramatukarim@gmail.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://fb.me/ramatufoundationSL" class="text-gray-600 hover:text-primary-green text-2xl" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary-green text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-10 pt-6 text-center text-gray-600">
+                <p>&copy; 2025 Ramatu Foundation for Girls' and Women's Empowerment. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="randomNonce"></script>
+    
+    <script src="js/script.js"></script>
+</body>
+</html> 
