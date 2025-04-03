@@ -665,6 +665,89 @@
             window.addEventListener('hashchange', function() {
                 resetSearch();
             });
+
+            // Sidebar Navigation Active State Functionality
+            const sidebarLinks = document.querySelectorAll('div.lg\\:col-span-1 div.mb-6 div.flex.flex-col a[href^="#"]');
+            const contentSections = document.querySelectorAll('section[id]');
+            
+            console.log("Found sidebar links:", sidebarLinks.length);
+            console.log("Found content sections:", contentSections.length);
+            
+            // Function to remove active state from all sidebar links
+            function resetSidebarLinks() {
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('text-primary-green');
+                    link.classList.add('text-gray-600');
+                    link.classList.remove('border-l-4');
+                    link.classList.remove('border-primary-green');
+                });
+            }
+            
+            // Function to set active state for a specific link
+            function setActiveSidebarLink(link) {
+                link.classList.remove('text-gray-600');
+                link.classList.add('text-primary-green');
+                link.classList.add('border-l-4');
+                link.classList.add('border-primary-green');
+            }
+            
+            // Function to update active sidebar link
+            function updateActiveSidebarLink() {
+                // Get current scroll position
+                const scrollPosition = window.scrollY;
+                
+                // Find the current section we're in
+                contentSections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150; // Offset for nav
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        // Reset all links
+                        resetSidebarLinks();
+                        
+                        // Add active class to the correct link
+                        const activeLink = document.querySelector(`div.lg\\:col-span-1 div.mb-6 div.flex.flex-col a[href="#${section.id}"]`);
+                        if (activeLink) {
+                            console.log("Setting active section:", section.id);
+                            setActiveSidebarLink(activeLink);
+                        }
+                    }
+                });
+            }
+            
+            // Update active link on page load
+            updateActiveSidebarLink();
+            
+            // Update active link on scroll - use debounce for better performance
+            let scrollDebounce;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollDebounce);
+                scrollDebounce = setTimeout(updateActiveSidebarLink, 50);
+            });
+            
+            // Handle click on sidebar links
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Prevent default anchor behavior
+                    e.preventDefault();
+                    
+                    // Get the target section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        // Scroll to the section
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active link manually for immediate feedback
+                        resetSidebarLinks();
+                        setActiveSidebarLink(this);
+                    }
+                });
+            });
         });
     </script>
 </body>
